@@ -1,0 +1,2 @@
+﻿  tracking.cpp
+c:\users\msral-user\desktop\color tracking\msral_micro_force_sensor\source\videoprocessor.h(14): fatal error C1083: Cannot open include file: 'FlyCapture2.h': No such file or directory

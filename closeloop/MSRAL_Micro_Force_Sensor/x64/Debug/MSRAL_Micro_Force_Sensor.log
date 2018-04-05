@@ -1,0 +1,18 @@
+﻿  tracking.cpp
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\videoprocessor.h(333): warning C4267: 'return': conversion from 'size_t' to 'long', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\videoprocessor.h(335): warning C4244: 'initializing': conversion from 'double' to 'long', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\videoprocessor.h(515): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(263): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(265): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(267): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(269): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(313): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(394): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(394): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(405): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(413): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(453): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\featuretrackergpu.h(457): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\viviphys\desktop\msral_micro_force_sensor\msral_micro_force_sensor\source\tracking.cpp(29): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  MSRAL_Micro_Force_Sensor.vcxproj -> C:\Users\VIVIPHYS\Desktop\MSRAL_Micro_Force_Sensor\x64\Debug\MSRAL_Micro_Force_Sensor.exe
+  MSRAL_Micro_Force_Sensor.vcxproj -> C:\Users\VIVIPHYS\Desktop\MSRAL_Micro_Force_Sensor\x64\Debug\MSRAL_Micro_Force_Sensor.pdb (Partial PDB)

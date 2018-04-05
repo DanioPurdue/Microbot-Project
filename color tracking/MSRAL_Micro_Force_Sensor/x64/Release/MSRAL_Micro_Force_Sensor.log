@@ -1,0 +1,138 @@
+﻿  CoilDriver.cpp
+  Control.cpp
+Source\Control.cpp(104): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(124): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(139): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Source\Control.cpp(158): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(159): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(160): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(165): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(166): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(167): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(201): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Source\Control.cpp(202): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GUI.cpp
+Source\GUI.cpp(89): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Source\GUI.cpp(104): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+Source\GUI.cpp(114): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Source\GUI.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Source\GUI.cpp(118): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Source\GUI.cpp(119): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MicroObject.cpp
+  Serial.cpp
+  tracking.cpp
+c:\program files\point grey research\flycapture2\include\Error.h(38): error C2143: syntax error: missing ')' before '('
+c:\program files\point grey research\flycapture2\include\Error.h(38): error C2079: 'visibility' uses undefined class 'FlyCapture2::__attribute__'
+c:\program files\point grey research\flycapture2\include\Error.h(38): error C2059: syntax error: ')'
+c:\program files\point grey research\flycapture2\include\Error.h(39): error C2440: 'initializing': cannot convert from 'const char [8]' to 'int'
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: There is no context in which this conversion is possible
+c:\program files\point grey research\flycapture2\include\Error.h(39): error C2146: syntax error: missing ';' before identifier 'Error'
+c:\program files\point grey research\flycapture2\include\Error.h(39): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(40): error C2059: syntax error: 'public'
+c:\program files\point grey research\flycapture2\include\Error.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(45): error C2365: 'FlyCapture2::Error': redefinition; previous definition was 'data variable'
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\Error.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(50): error C2143: syntax error: missing ',' before '&'
+c:\program files\point grey research\flycapture2\include\Error.h(50): error C2365: 'FlyCapture2::Error': redefinition; previous definition was 'data variable'
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\Error.h(55): error C2588: '::~Error': illegal global destructor
+c:\program files\point grey research\flycapture2\include\Error.h(55): error C2575: 'Error': only member functions and bases can be virtual
+c:\program files\point grey research\flycapture2\include\Error.h(55): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(55): error C2365: 'FlyCapture2::Error': redefinition; previous definition was 'data variable'
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C2143: syntax error: missing ';' before '&'
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C2143: syntax error: missing ',' before '&'
+c:\program files\point grey research\flycapture2\include\Error.h(60): error C2801: 'FlyCapture2::operator =' must be a non-static member
+c:\program files\point grey research\flycapture2\include\Error.h(65): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(65): error C2143: syntax error: missing ',' before '&'
+c:\program files\point grey research\flycapture2\include\Error.h(65): error C2270: '==': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(65): error C2803: 'operator ==' must have at least one formal parameter of class type
+c:\program files\point grey research\flycapture2\include\Error.h(65): error C2805: binary 'operator ==' has too few parameters
+c:\program files\point grey research\flycapture2\include\Error.h(71): error C2270: '==': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(71): error C2805: binary 'operator ==' has too few parameters
+c:\program files\point grey research\flycapture2\include\Error.h(76): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(76): error C2143: syntax error: missing ',' before '&'
+c:\program files\point grey research\flycapture2\include\Error.h(76): error C2270: '!=': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(76): error C2803: 'operator !=' must have at least one formal parameter of class type
+c:\program files\point grey research\flycapture2\include\Error.h(76): error C2805: binary 'operator !=' has too few parameters
+c:\program files\point grey research\flycapture2\include\Error.h(82): error C2270: '!=': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(82): error C2805: binary 'operator !=' has too few parameters
+c:\program files\point grey research\flycapture2\include\Error.h(89): error C2270: 'GetType': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(96): error C2270: 'GetDescription': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(103): error C2270: 'GetLine': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(110): error C2270: 'GetFilename': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(117): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\Error.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\Error.h(117): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\Error.h(117): error C2146: syntax error: missing ';' before identifier 'GetCause'
+c:\program files\point grey research\flycapture2\include\Error.h(117): error C2270: 'GetCause': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(124): error C2270: 'GetBuildDate': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(132): error C2270: 'CollectSupportInformation': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(137): error C2270: 'PrintErrorTrace': modifiers not allowed on nonmember functions
+c:\program files\point grey research\flycapture2\include\Error.h(139): error C2059: syntax error: 'protected'
+c:\program files\point grey research\flycapture2\include\Error.h(141): error C2059: syntax error: 'private'
+c:\program files\point grey research\flycapture2\include\Error.h(144): error C2255: 'friend': not allowed outside of a class definition
+c:\program files\point grey research\flycapture2\include\Error.h(146): error C2059: syntax error: '}'
+c:\program files\point grey research\flycapture2\include\Error.h(146): error C2143: syntax error: missing ';' before '}'
+c:\program files\point grey research\flycapture2\include\BusManager.h(29): error C2143: syntax error: missing ';' before '{'
+c:\program files\point grey research\flycapture2\include\BusManager.h(29): error C2447: '{': missing function header (old-style formal list?)
+c:\program files\point grey research\flycapture2\include\CameraBase.h(47): error C2143: syntax error: missing ')' before '('
+c:\program files\point grey research\flycapture2\include\CameraBase.h(47): error C2079: 'visibility' uses undefined class 'FlyCapture2::__attribute__'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(47): error C2374: 'FlyCapture2::visibility': redefinition; multiple initialization
+  c:\program files\point grey research\flycapture2\include\Error.h(38): note: see declaration of 'FlyCapture2::visibility'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(47): error C2059: syntax error: ')'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(48): error C2440: 'initializing': cannot convert from 'const char [8]' to 'int'
+  c:\program files\point grey research\flycapture2\include\CameraBase.h(48): note: There is no context in which this conversion is possible
+c:\program files\point grey research\flycapture2\include\CameraBase.h(48): error C2146: syntax error: missing ';' before identifier 'CameraBase'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(48): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(49): error C2059: syntax error: 'public'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(54): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(54): error C2365: 'FlyCapture2::CameraBase': redefinition; previous definition was 'data variable'
+  c:\program files\point grey research\flycapture2\include\CameraBase.h(48): note: see declaration of 'FlyCapture2::CameraBase'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(59): error C2588: '::~CameraBase': illegal global destructor
+c:\program files\point grey research\flycapture2\include\CameraBase.h(59): error C2575: 'CameraBase': only member functions and bases can be virtual
+c:\program files\point grey research\flycapture2\include\CameraBase.h(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(59): error C2365: 'FlyCapture2::CameraBase': redefinition; previous definition was 'data variable'
+  c:\program files\point grey research\flycapture2\include\CameraBase.h(48): note: see declaration of 'FlyCapture2::CameraBase'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(81): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\CameraBase.h(81): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(81): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(81): error C2146: syntax error: missing ';' before identifier 'Connect'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(81): error C2059: syntax error: 'constant'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(91): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\CameraBase.h(91): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(91): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(91): error C2146: syntax error: missing ';' before identifier 'Disconnect'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(91): error C2059: syntax error: 'constant'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(102): error C2575: 'IsConnected': only member functions and bases can be virtual
+c:\program files\point grey research\flycapture2\include\CameraBase.h(102): error C2059: syntax error: 'constant'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(118): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\CameraBase.h(118): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(118): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(118): error C2146: syntax error: missing ';' before identifier 'SetCallback'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(120): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(120): error C2059: syntax error: 'constant'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(141): error C2433: 'Error': 'virtual' not permitted on data declarations
+c:\program files\point grey research\flycapture2\include\CameraBase.h(141): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(141): error C2086: 'int FlyCapture2::Error': redefinition
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(141): error C2146: syntax error: missing ';' before identifier 'StartCapture'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(143): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(143): error C2059: syntax error: 'constant'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(166): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(166): error C2370: 'FlyCapture2::Error': redefinition; different storage class
+  c:\program files\point grey research\flycapture2\include\Error.h(39): note: see declaration of 'FlyCapture2::Error'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(166): error C2146: syntax error: missing ';' before identifier 'StartSyncCapture'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(168): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(168): error C2143: syntax error: missing ',' before '*'
+c:\program files\point grey research\flycapture2\include\CameraBase.h(170): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files\point grey research\flycapture2\include\CameraBase.h(170): fatal error C1903: unable to recover from previous error(s); stopping compilation
