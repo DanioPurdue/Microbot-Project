@@ -89,7 +89,7 @@ The main body of the feature trackng code in the `featuretrackerGPU.h`
 Prior to the tracking of the robot, the developed program is initialized by loading the calibration data specific to the $\mu$FSMM robot being used. In practice a non-linear polynomial fit to the experimental force-deflection data is used as the calibration data in the tracking algorithm.)
 Next, a set of interactive features that allow the user to manually select the templates of the whole robot, the main body of the robot, and the end-effector tip or probe from the current camera frame. Examples of such templates are shown below
 
-![image-20180404211525404](/Users/daniowang/OneDrive/ME%20Research/MicrobotProject/clean_code.png)
+![image-20180404211525404](clean_code.png)
 
 *Figure 1 Templates needed for color tracking* 
 
@@ -98,7 +98,7 @@ With this information, an affine transformation is applied to obtain a rectified
 
 The deformation of the compliant structure is then calculated based on the difference between the coordinates of the center of the probe and the position of the robot body in the deformed image and that same distance in an image of the microrobot in its undeformed state. The locations of the probe center and the body center are determined in pixel units.  The conversion from displacement to force is calculated through the observed deformation and the stiffness values obtained from the calibration data. The figure below illustrates all the steps of the developed real-time tracking algorithm.
 
-![image-20180404212000984](/Users/daniowang/OneDrive/ME%20Research/MicrobotProject/flowchart.png)
+![image-20180404212000984](flowchart.png)
 
 *Figure 2 Flow Charts of the feature tracking*  
 
@@ -108,7 +108,7 @@ The zoom-in ratio of the camera, the deformation range of the end-effector tip, 
 
 While the SURF-based algorithm runs at real-time, it involves intensive computations (that require GPU processing) that limits the real-time speed of the vision-based force measurement that can be achieved. This feature detection method can also induce uncertainty due to the use of the 2D homography process. As previously mentioned, when the robot undergoes sudden rotational motion, its features are blurred due to the limited frame rate and the tracking breaks down. Therefore, we have developed a color-based tracking technique that is more stable and lightweight.
 
-![image-20180404212828320](/Users/daniowang/OneDrive/ME%20Research/MicrobotProject/colorTracking.png)
+![image-20180404212828320](colorTracking.png)
 
  Figure 3*(a) SURF detection of the microrobot; (b) Template matching tracking result and associated image locations of robot probe and body; (c) Color-tracking method: raw image frame and color matching results associated to the segmented (1) spring, (2) robot probe ﬁducial, and (3) body ﬁducial.*
 
