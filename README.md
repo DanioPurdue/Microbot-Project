@@ -20,6 +20,10 @@ featuretracker.h
 
 featuretrackerGPU.h
 
+Serial.cpp
+
+Serial.h
+
 GUI.cpp
 
 GUI.h
@@ -50,15 +54,15 @@ Visual Studio is recommended for this project. Go through the property sheet whi
 
 **Packages required:**
 
-OpenCV: Version 2.7?
+OpenCV: Version 3.0+
 
 CUDA: so far only the feature tracking approach used the CUDA library
 
-FlyCap SDK: The project is developed based on FlyCap camera, and the the SDK is included in the property sheet.
+FlyCap SDK: The project is developed based on FlyCap camera, and the the SDK is included in the property sheet.(**NOTE: Not compatible with new FlyCapture SDK right now**)
 
-The project should be run in **release** mode **not in debug** mode. The progamme can be switched to the debugg mode by installing OpenCV debugg library. Under both the `closeloop` and `color tracking` , you can find a folder called `image` which are the places where template images are stored.
+The project should be run in **release** mode **not in debug** mode. The program can be switched to the debug mode by installing OpenCV debug library. Under both the `closeloop` and `color tracking` , you can find a folder called `image` which are the places where template images are stored.
 
-`tracking.cpp` contians the directory for the video that you want to load.  
+`tracking.cpp` contains the directory for the video that you want to load.  
 
 ```cpp
 // Open video file
@@ -76,15 +80,15 @@ processor.setFrameProcessor(&tracker);
 
 ## Future Improvement
 
-The current approach is not perfect. The color tracking method could be faster by using the CUDA library. Kalmain feature can be finely tuned to increase the stability of the path planing. A Kalman function is included in the project folder, but it is not perfect. Although it can improve the stability, it sensitive to the displacement of the probe. Due to the fruction from the petridish and magnetization of the robot, the robot is not easy to control. Reinforcement Learning could be useful for the system learn the parameters of the maganetic field which can lead to finer control of the movement of the robot.
+The current approach is not perfect. The color tracking method could be faster by using the CUDA library. Kalman feature can be finely tuned to increase the stability of the path planning. A Kalman function is included in the project folder, but it is not perfect. Although it can improve the stability, it sensitive to the displacement of the probe. Due to the friction from the petri dishes and magnetization of the robot, the robot is not easy to control. Reinforcement Learning could be useful for the system learn the parameters of the magnetic field which can lead to finer control of the movement of the robot.
 
-For the control side, a haptic feedback controller can be added to allow a more interactive control.
+For the control side, there is a PID controller inside the control class. Three parameters(Kp, Kd, Ki) could be finely tuned for each case to achieve a better result. Current PID algorithm assumes a stable sampling time and only uses finite difference equations without actually take the sampling rate into calculation. This could be improved in the future version. Also a haptic feedback controller could be incorporated into the program to allow a more interactive control. Currently the magnetic filed generator's code(Arduino) is independent from the main program but is also included in this repository. It requires a modified Arduino USB host library to support the space navigator, which is also included.
 
 ## Ideas Behind the Algorithm
 
 ### Feature Based Approach
 
-The main body of the feature trackng code in the `featuretrackerGPU.h` 
+The main body of the feature tracking code in the `featuretrackerGPU.h` 
 
 Prior to the tracking of the robot, the developed program is initialized by loading the calibration data specific to the $\mu$FSMM robot being used. In practice a non-linear polynomial fit to the experimental force-deflection data is used as the calibration data in the tracking algorithm.)
 Next, a set of interactive features that allow the user to manually select the templates of the whole robot, the main body of the robot, and the end-effector tip or probe from the current camera frame. Examples of such templates are shown below
