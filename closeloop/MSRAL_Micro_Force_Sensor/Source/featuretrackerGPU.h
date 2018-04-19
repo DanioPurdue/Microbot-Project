@@ -37,7 +37,6 @@ class FeatureTracker : public FrameProcessor {
 	std::vector<uchar> status; // status of tracked features
 	std::vector<float> err;    // error in tracking
 	std::vector<int> forceXHist;
-	
 
 	int testCounter;	//this count how many frames have lasted since the start of the tracking
 
@@ -86,7 +85,7 @@ public:
 	};
 	Point bodyCenter;	//is the center of the body in the Template matching frame
 
-	//speed up for IO
+	//store the template image so that you do not have to load it everytime
 	Mat templProbe;
 	Mat templBodyOnly;
 
@@ -103,18 +102,17 @@ public:
 	Mat img_object; //store the feature points information of the object
 	std::vector<cv::KeyPoint> keypoints_object;
 
-	//Kalman Filter
+	//Kalman Filter Variables
 	cv::KalmanFilter KF;
 	cv::Mat_<float> measurement;
 	bool kalmanInit;
 	
-	//Export Force Data
+	//Export Force Data variable
 	ofstream file;
 
+	//main feature tracker class
 	FeatureTracker() : minDist(10.) {
 		testCounter = 0;
-
-		//different counter
 		calibrationCounter = 0;
 		calibrationDistanceY = 0;
 		histPosition = 0;
@@ -124,7 +122,6 @@ public:
 		bodyCenter = Point(0, 0);
 		kalmanInit = false;
 		roiOffset = Point(0, 0);
-
 		coilDriver = new CoilDriver("COM3");    // adjust as needed
 		control = new Control(coilDriver);
 	}
@@ -132,11 +129,13 @@ public:
 	std::vector<cv::KeyPoint> keypoints_scene;
 	std::vector<cv::DMatch > matches;
 
+	//Input: the width in pixel measured from GUI
 	void setRobotWidth(int width)
 	{
 		robotWidthInPixel = width;
 	}
 
+	//Location information about the target
 	void setTargetInformation(Point targetLoc, Point targetDirec)
 	{
 		targetLocation.x = targetLoc.x;
@@ -145,25 +144,19 @@ public:
 		targetDirection.y = targetDirec.y;
 	}
 
-	// processing method
+	//core image processing function
+	//input: camera image frame
+	//output: processed image frame
 	void process(cv::Mat &frame, cv::Mat &output) {
 		clock_t start, end;
 		start = clock();
-
-		//Testing
-		testCounter++;
+		testCounter++; // test counter is used to keep track of how many image frames have been processed
 		std::cout << "Test Counter: " << testCounter << std::endl;
-
-		// convert to gray-level image
-		//surf
+		//Surf
 		cv::cvtColor(frame, gray, CV_BGR2GRAY);
 		Mat surfImage;
 		gray.copyTo(surfImage);
 		surfTracker2(gray, "./image/body.JPG");
-
-		//hough transform
-		//frame.copyTo(output); //if you delete this line there will be an exeception
-
 		clockTime(start, end, "overall");
 		cout << endl << endl;
 	}
@@ -177,7 +170,7 @@ public:
 		std::cout << processPart << " process took " << 1 / fps << " seconds" << endl;
 	}
 
-	// preprocess the image to make it easier for detection
+	//preprocess the image to remove dust
 	void removeTheDust(cv::Mat &frame)
 	{
 		//cv::Mat structElement1(3, 3, CV_8UC1, cv::Scalar(1));
@@ -186,6 +179,7 @@ public:
 		cv::threshold(frame, frame, 75, 230, CV_THRESH_BINARY);
 	}
 
+	//Display the image 
 	void showImage(cv::Mat image, char* frameTitle)
 	{
 		cv::namedWindow(frameTitle);
@@ -199,7 +193,7 @@ public:
 		return abs(refPoint.x - currPoint.x) + abs(refPoint.y - currPoint.y);
 	}
 
-	//surf tracker
+	//surf algo tracker
 	void surfTracker2(cv::Mat &grayImage, string fileName)
 	{
 		clock_t start, end;
@@ -233,13 +227,8 @@ public:
 
 		imgScene.upload(img_scene);
 		CV_Assert(!imgScene.empty());
-
-
-
 		//Printing the device information
-		//cv::cuda::printShortCudaDeviceInfo(cv::cuda::getDevice());
 		clockTime(start, end, "GPU Before surf");
-
 		cv::cuda::SURF_CUDA surf(400);
 		// detecting keypoints & computing descriptors
 		cv::cuda::GpuMat keypointsSceneGPU, descriptorsSceneGPU;
@@ -248,22 +237,18 @@ public:
 		surf(img_object_gpu, cv::cuda::GpuMat(), keypointsObjectGPU, descriptorsObjectGPU);
 		}
 		surf(imgScene, cv::cuda::GpuMat(), keypointsSceneGPU, descriptorsSceneGPU);
-		
 		clockTime(start, end, "GPU Before Matching");
 		// matching descriptors
 		cv::Ptr<cv::cuda::DescriptorMatcher> matcher = cv::cuda::DescriptorMatcher::createBFMatcher(cv::NORM_L2);
 		vector<vector<cv::DMatch>> matches;
 		matcher->knnMatch(descriptorsObjectGPU, descriptorsSceneGPU, matches, 2);
-
 		clockTime(start, end, "GPU Before Download");
 		// downloading results
 		vector<float> descriptors_object, descriptorsScene;
-
 		surf.downloadKeypoints(keypointsObjectGPU, keypoints_object);
 		surf.downloadKeypoints(keypointsSceneGPU, keypoints_scene);
 		surf.downloadDescriptors(descriptorsObjectGPU, descriptors_object);
 		surf.downloadDescriptors(descriptorsSceneGPU, descriptorsScene);
-
 		//===============================================================================================
 		clockTime(start, end, "GPU After download");
 		//-- Draw only "good" matches (i.e. whose distance is less than 3*min_dist )
@@ -279,8 +264,6 @@ public:
 		}
 
 		img_matches = img_scene;
-
-
 		//-- Localize the object
 		std::vector<Point2f> obj;
 		std::vector<Point2f> scene;
@@ -311,7 +294,6 @@ public:
 		perspectiveTransform(obj_corners, scene_corners, H);
 
 		//===============================================================================================
-
 		//if points are clustered together
 		//check this part  
 		if (orientationCheck(scene_corners[0], scene_corners[1]) == false)
@@ -330,10 +312,11 @@ public:
 		double widthOfRectangle = difference(scene_corners[0], scene_corners[1]);
 		double RecAngle = atan2(scene_corners[0].y - scene_corners[1].y, scene_corners[0].x - scene_corners[1].x) * 180 / 3.1415926;
 		double RecAngle03 = atan2(scene_corners[3].y - scene_corners[0].y, scene_corners[3].x - scene_corners[0].x) * 180 / 3.1415926;
-		
 		//checking whether a rectangle has been formed
 		double testRecAngle;
 		double testRecAngle03;
+
+		//Check whether the angle measurement obtained by SURF is valid
 		if (RecAngle < 0)
 		{
 			testRecAngle = 360 + RecAngle;
@@ -353,14 +336,10 @@ public:
 		}
 		if (abs(testRecAngle - 90 - testRecAngle03) > 15)
 		{
-			//std::cerr << "RecAngle: " << RecAngle << std::endl;
-			//std::cerr << "RecAngle03: " << RecAngle03 << std::endl;
 			std::cerr << "invalid surf rectangle" << std::endl;
 			imshow("Good Matches & Object detection", img_matches);
 			return;
 		}
-
-
 		orientationAngle = 180 - RecAngle;
 		if (orientationAngle > 180)
 		{
@@ -380,8 +359,6 @@ public:
 		// get the rotation matrix
 		int calibrationAngle = 3;
 		M = getRotationMatrix2D(rect.center, angle + 180, 1.0);
-		
-
 		clockTime(start, end, "before warpAffine");
 		cv::warpAffine(img_scene, rotated, M, img_matches.size(), cv::INTER_CUBIC);
 		// crop the resulting image
